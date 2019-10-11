@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Sintony', sans-serif; }
+
+body {
+  background: #1d1d1d; }
+  body h4 {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 400;
+    font-size: 6rem;
+    margin-top: -2rem; }
+
+.start-bg {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: "Exo", sans-serif;
+  color: #fff;
+  background: linear-gradient(-45deg, #461393, #912a36, #932d2d, #461393);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite; }
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+.bg {
+  width: 100%;
+  position: absolute;
+  top: 35%;
+  text-align: center; }
+
+a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #ddd; }
+  a:hover {
+    color: #ddd; }
+
+.btn {
+  display: inline-block;
+  min-width: 8rem;
+  margin: 5px auto;
+  padding: .75rem .75rem;
+  background: none;
+  background: #000;
+  color: #fff;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: 0; }
+  .btn:hover {
+    background: #fff;
+    color: #1d1d1d; }
+
+@keyframes updateStats {
+  0% {
+    transform: scale(1); }
+  50% {
+    font-weight: bold;
+    transform: scale(1.1);
+    color: red; }
+  100% {
+    transform: scale(1); } }
+
+.updateStats {
+  animation: updateStats 500ms linear infinite; }
+
+h1 {
+  font-size: 2rem;
+  color: #fff;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  background: #2d2d2d;
+  text-align: center; }
+
+.game-container {
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  background: url(../img/zeus-half.png) no-repeat, url(../img/poseidon-half.png) no-repeat right;
+  align-items: center;
+  justify-content: center;
+  height: auto; }
+  @media (min-width: 850px) {
+    .game-container {
+      flex-wrap: nowrap;
+      height: 90vh; }
+      .game-container #overlay {
+        color: rgba(0, 0, 0, 0.5); } }
+  .game-container .grid {
+    display: grid;
+    background: #2d2d2d; }
+    .game-container .grid .grid-item {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #2d2d2d;
+      background: #4d4d4d;
+      box-sizing: border-box;
+      cursor: pointer;
+      pointer-events: none; }
+    @media (min-width: 500px) {
+      .game-container .grid .grid-item {
+        width: 50px;
+        height: 50px; } }
+    .game-container .grid .grid-item.player-1 {
+      background: url(../img/zeus.png), #4d4d4d;
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .game-container .grid .grid-item.player-2 {
+      background: url(../img/poseidon.png), #4d4d4d;
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .game-container .grid .grid-item.disabled {
+      background: url(../img/dimmed-cell.png), #4d4d4d;
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .game-container .grid .grid-item.pickup-attack {
+      background: url(../img/axe.png), #4d4d4d;
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .game-container .grid .grid-item.pickup-attack-super {
+      background: url(../img/maces.png), #4d4d4d;
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .game-container .grid .grid-item.pickup-defense {
+      background: url(../img/armor.png), #4d4d4d;
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .game-container .grid .grid-item.pickup-health {
+      background: url(../img/caduceus.png), #4d4d4d;
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .game-container .grid .grid-item.pickup-speed {
+      background: url(../img/boots.png), #4d4d4d;
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .game-container .grid .grid-item.highlighted {
+      box-shadow: inset 0px 0 10px 1px #e0e0e0;
+      pointer-events: auto; }
+    .game-container .grid .grid-item.player-1, .game-container .grid .grid-item.player-2 {
+      pointer-events: none;
+      box-shadow: none; }
+  .game-container .dashboard {
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #c4c4c4;
+    transition: all 300ms ease;
+    box-sizing: border-box; }
+    .game-container .dashboard .player-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem; }
+    .game-container .dashboard img {
+      width: 50%; }
+    .game-container .dashboard .stats {
+      list-style: none;
+      font-size: 0.9rem; }
+    @media (min-width: 850px) {
+      .game-container .dashboard {
+        width: 150px;
+        margin-right: 25px; }
+        .game-container .dashboard .player-name {
+          font-size: 2rem; }
+        .game-container .dashboard .stats {
+          font-size: 1.1rem; } }
+  .game-container .dashboard.active-turn {
+    background: #c4c4c4; }
+  @media (min-width: 850px) {
+    .game-container .dashboard:nth-child(2) {
+      order: 3;
+      margin-right: 0;
+      margin-left: 25px; } }
+
+.combat-mode {
+  position: fixed;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; }
+  .combat-mode .inner {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 600px;
+    background: #eee; }
+    .combat-mode .inner h2 {
+      width: 100%;
+      font-size: 2.5rem;
+      padding: 1rem;
+      background: #f5f5f5; }
+      .combat-mode .inner h2 span {
+        color: #ff0000; }
+    .combat-mode .inner .player {
+      width: 50%;
+      padding: 2%;
+      box-sizing: border-box; }
+      .combat-mode .inner .player .player-name {
+        font-size: 2rem;
+        margin-bottom: 20px; }
+      .combat-mode .inner .player img {
+        width: 50%; }
+      .combat-mode .inner .player .stats {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        list-style: none; }
+        .combat-mode .inner .player .stats li {
+          width: 50%; }
+    .combat-mode .inner .player.active-turn {
+      background: #c4c4c4; }
+  .combat-mode .actions {
+    width: 100%; }
+
+.combat-mode.visible {
+  visibility: visible; }
+
+#olympus {
+  position: absolute;
+  display: flex;
+  flex-wrap: warp;
+  bottom: 0;
+  width: 42%;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: -2; }

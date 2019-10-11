@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Turn Based Game</title>
+    <meta name="author" content="Stephen Shields">
+    <meta name="description" content="Turn Based Game">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash of the Gods</title>
+
+    <!-- CSS & Fonts -->
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Sintony" rel="stylesheet">
+
+<body>
+
+    <div id="game">
+        <main class="game-container" id="overlay">
+            <div class="dashboard active-turn" id="player_1_dashboard">
+                <h2 class="player-name"><img src="./src/img/zeus.png" alt="zeus" title="zeus"></h2>
+                <ul class="stats">
+                    <li>Health: <span id="health"></span> </li>
+                    <li>Attack: <span id="attack"></span> </li>
+                    <li>Shield: <span id="shield"></span> </li>
+                </ul>
+            </div>
+            <div class="dashboard" id="player_2_dashboard">
+                <h2 class="player-name"><img src="./src/img/poseidon.png" alt="poseidon" title="poseidon"></h2>
+                <ul class="stats">
+                    <li>Health: <span id="health"></span> </li>
+                    <li>Attack: <span id="attack"></span> </li>
+                    <li>Shield: <span id="shield"></span> </li>
+                </ul>
+            </div>
+            <div class="grid"></div>
+        </main>
+
+
+        <div class="combat-mode">
+            <div class="inner">
+                <h2>The fight begins... </h2>
+                <div class="player" id="combat_player_1_dashboard">
+                    <h3 class="player-name"><img src="./src/img/zeus.png" alt="zeus" title="zeus"></h3>
+                    <ul class="stats">
+                        <li>Health:</li>
+                        <li id="health"></li>
+                        <li>Attack:</li>
+                        <li id="attack"></li>
+                        <li>Shield:</li>
+                        <li id="shield"></li>
+                    </ul>
+                </div>
+                <div class="player" id="combat_player_2_dashboard">
+                    <h3 class="player-name"><img src="./src/img/poseidon.png" alt="poseidon" title="poseidon"></h3>
+                    <ul class="stats">
+                        <li>Health:</li>
+                        <li id="health"></li>
+                        <li>Attack:</li>
+                        <li id="attack"></li>
+                        <li>Shield:</li>
+                        <li id="shield"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="combat-mode victory">
+            <div class="inner">
+                <h2></h2>
+                <button class="btn">Restart</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="src/js/main.js"></script>
+</body>
+
+</html>
