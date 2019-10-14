@@ -10,6 +10,12 @@ body {
     font-weight: 400;
     font-size: 6rem;
     margin-top: -2rem; }
+  @media only screen and (max-width: 600px) {
+    body h4 {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 400;
+      font-size: 6rem;
+      margin-top: -15rem; } }
 
 .start-bg {
   margin: 0;
@@ -82,12 +88,12 @@ h1 {
   padding: 2rem;
   display: flex;
   flex-wrap: wrap;
-  background: url(../img/zeus-half.png) no-repeat, url(../img/poseidon-half.png) no-repeat right;
   align-items: center;
   justify-content: center;
   height: auto; }
   @media (min-width: 850px) {
     .game-container {
+      background: url(../img/zeus-half.png) no-repeat, url(../img/poseidon-half.png) no-repeat right;
       flex-wrap: nowrap;
       height: 90vh; }
       .game-container #overlay {
@@ -154,7 +160,7 @@ h1 {
     transition: all 300ms ease;
     box-sizing: border-box; }
     .game-container .dashboard .player-name {
-      font-size: 1.5rem;
+      font-size: 2.7rem;
       font-weight: bold;
       margin-bottom: 1rem; }
     .game-container .dashboard img {
@@ -167,7 +173,7 @@ h1 {
         width: 150px;
         margin-right: 25px; }
         .game-container .dashboard .player-name {
-          font-size: 2rem; }
+          font-size: 1.8rem; }
         .game-container .dashboard .stats {
           font-size: 1.1rem; } }
   .game-container .dashboard.active-turn {

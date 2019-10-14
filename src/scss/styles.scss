@@ -18,7 +18,15 @@ body {
         font-weight: 400;
         font-size: 6rem;
         margin-top: -2rem;
-    }    
+    }
+    @media only screen and (max-width: 600px) {
+    h4 {
+        font-family: 'Cairo', sans-serif;
+        font-weight: 400;
+        font-size: 6rem;
+        margin-top: -15rem;
+  }
+}    
 }
 
 .start-bg {
@@ -110,13 +118,13 @@ h1 {
     padding: 2rem;
     display: flex;
     flex-wrap: wrap;
-    background: url(../img/zeus-half.png) no-repeat,
-                url(../img/poseidon-half.png) no-repeat right;
     align-items: center;
     justify-content: center;
     height: auto;
 
     @media (min-width: 850px) {
+        background: url(../img/zeus-half.png) no-repeat,
+                url(../img/poseidon-half.png) no-repeat right;
         flex-wrap: nowrap;
         height: 90vh;
         
@@ -206,7 +214,7 @@ h1 {
         box-sizing: border-box;
 
         .player-name {
-            font-size: 1.5rem;
+            font-size: 2.7rem;
             font-weight: bold;
             margin-bottom: 1rem;
         }
@@ -223,7 +231,7 @@ h1 {
             margin-right: 25px;
 
             .player-name {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             .stats {
                 font-size: 1.1rem;
